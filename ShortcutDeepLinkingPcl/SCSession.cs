@@ -4,72 +4,72 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCSession
     {
-        private Uri deepLink;
-        private string id;
-        private string linkId;
-        private bool closed;
+        private Uri mDeepLink;
+        private string mId;
+        private string mLinkId;
+        private bool mClosed;
 
         public SCSession(string DeepLink = "")
         {
             if (!String.IsNullOrWhiteSpace(DeepLink))
-                this.deepLink = new Uri(DeepLink);
-            this.id = new Random(int.MaxValue - 1).Next().ToString();
+                this.mDeepLink = new Uri(DeepLink);
+            this.mId = new Random(int.MaxValue - 1).Next().ToString();
         }
 
         public SCSession(Uri DeepLink)
         {
-            this.deepLink = DeepLink;
-            this.id = new Random(int.MaxValue - 1).Next().ToString();
+            this.mDeepLink = DeepLink;
+            this.mId = new Random(int.MaxValue - 1).Next().ToString();
         }
 
         public Uri DeepLink
         {
-            get { return this.deepLink; }
-            set { this.deepLink = value; }
+            get { return this.mDeepLink; }
+            set { this.mDeepLink = value; }
         }
 
         public string Id
         {
-            get { return this.id; }
-            private set { this.id = value; }
+            get { return this.mId; }
+            private set { this.mId = value; }
         }
 
         public string LinkId
         {
             get
             {
-                if (String.IsNullOrEmpty(this.linkId))
+                if (String.IsNullOrEmpty(this.mLinkId))
                 {
-                    var queryString = this.deepLink.ParseQueryString();
+                    var queryString = this.mDeepLink.ParseQueryString();
                     if (queryString.ContainsKey(KeyValues.LINK_ID_KEY))
-                        this.linkId = queryString[KeyValues.LINK_ID_KEY];
+                        this.mLinkId = queryString[KeyValues.LINK_ID_KEY];
                 }
-                return this.linkId;
+                return this.mLinkId;
             }
-            private set { this.linkId = value; }
+            private set { this.mLinkId = value; }
         }
 
         public void Open()
         {
-            this.closed = false;
+            this.mClosed = false;
         }
 
         public void Close()
         {
-            this.closed = true;
+            this.mClosed = true;
         }
 
         public bool IsClosed()
         {
-            return this.closed;
+            return this.mClosed;
         }
 
         public string ToString()
         {
             return String.Format(@"SESSION_ID={0} SESSION_STATE={1} DEEP_LINK={2}",
-                this.id,
-                (this.closed ? "closed" : "open"),
-                this.deepLink);
+                this.mId,
+                (this.mClosed ? "closed" : "open"),
+                this.mDeepLink);
         }
     }
 }

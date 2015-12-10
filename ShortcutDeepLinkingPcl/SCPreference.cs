@@ -4,12 +4,27 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCPreference
     {
+        private object mContext;
+        private object mSharedPreferences;
+        private object mEditor;
+
+        public SCPreference(object context)
+        {
+            mContext = context;
+        }
+
         public string DeviceId
         {
             get { return SCUtils.GetDeviceIdInternal(); }
         }
 
-        internal bool IsFirstLaunch()
+        public void SetFirstLaunch(bool value)
+        {
+            // TODO: Implement this method
+            throw new NotImplementedException();
+        }
+
+        public bool IsFirstLaunch()
         {
             throw new NotImplementedException();
         }

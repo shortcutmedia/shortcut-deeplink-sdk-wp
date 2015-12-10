@@ -2,19 +2,22 @@
 
 namespace Shortcut.DeepLinking.Pcl
 {
+    /// <summary>
+    /// This class holds the configuration details for the SDK.
+    /// </summary>
     public class SCConfig
     {
-        private string authToken;
-        private int environment = KeyValues.ENVIRONMENT_PRODUCTION;
-        private int logLevel = KeyValues.LOG_LEVEL_INFO;
+        private string mAuthToken;
+        private int mEnvironment = KeyValues.ENVIRONMENT_PRODUCTION;
+        private int mLogLevel = KeyValues.LOG_LEVEL_INFO;
 
         public SCConfig(String AuthToken)
         {
-            this.authToken = AuthToken;
+            this.mAuthToken = AuthToken;
 
-            if (this.environment == KeyValues.ENVIRONMENT_SANDBOX)
+            if (this.mEnvironment == KeyValues.ENVIRONMENT_SANDBOX)
             {
-                this.logLevel = KeyValues.LOG_LEVEL_DEBUG;
+                this.mLogLevel = KeyValues.LOG_LEVEL_DEBUG;
             }
         }
 
@@ -22,11 +25,11 @@ namespace Shortcut.DeepLinking.Pcl
         {
             get
             {
-                return this.authToken;
+                return this.mAuthToken;
             }
             set
             {
-                this.authToken = value;
+                this.mAuthToken = value;
             }
         }
 
@@ -34,11 +37,11 @@ namespace Shortcut.DeepLinking.Pcl
         {
             get
             {
-                return this.environment;
+                return this.mEnvironment;
             }
             set
             {
-                this.environment = value;
+                this.mEnvironment = value;
             }
         }
 
@@ -46,11 +49,11 @@ namespace Shortcut.DeepLinking.Pcl
         {
             get
             {
-                return this.logLevel;
+                return this.mLogLevel;
             }
             set
             {
-                this.logLevel = value;
+                this.mLogLevel = value;
             }
         }
 

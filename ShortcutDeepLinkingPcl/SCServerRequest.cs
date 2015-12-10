@@ -8,20 +8,20 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCServerRequest
     {
-        private string requestUri;
-        private SCSession session;
-        private Dictionary<string, string> postData;
+        private string mRequestUri;
+        private SCSession mSession;
+        private Dictionary<string, string> mPostData;
 
         public SCServerRequest(string RequestPath, SCSession Session)
         {
-            this.requestUri = RequestPath;
-            this.session = Session;
+            this.mRequestUri = RequestPath;
+            this.mSession = Session;
         }
 
         protected Dictionary<string, string> PostData
         {
-            get { return this.postData; }
-            set { this.postData = value; }
+            get { return this.mPostData; }
+            set { this.mPostData = value; }
         }
 
         protected Dictionary<string, string> CommonPostData
@@ -30,7 +30,7 @@ namespace Shortcut.DeepLinking.Pcl
             {
                 Dictionary<string, string> postData = new Dictionary<string, string>();
                 postData.Add(KeyValues.DEVICE_ID_KEY, new SCPreference().DeviceId);
-                postData.Add(KeyValues.SESSION_ID_KEY, this.session.Id);
+                postData.Add(KeyValues.SESSION_ID_KEY, this.mSession.Id);
                 return postData;
             }
         }
@@ -48,7 +48,7 @@ namespace Shortcut.DeepLinking.Pcl
                 {
                     using (HttpClient client = new HttpClient(handler) { BaseAddress = new Uri(KeyValues.REQUEST_BASE_URL) })
                     {
-                        string content = client.ExecutePostDataAsJsonAsync(this.requestUri, BuildPostData()).Result.GetResult();
+                        string content = client.ExecutePostDataAsJsonAsync(this.mRequestUri, BuildPostData()).Result.GetResult();
                         SCServerResponse scResponse = new SCServerResponse(JObject.Parse(content));
                         result = scResponse.DeepLinkString;
                     }

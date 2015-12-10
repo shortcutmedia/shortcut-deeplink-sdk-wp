@@ -31,6 +31,9 @@ namespace Shortcut.DeepLinking.Pcl
         internal const int ENVIRONMENT_SANDBOX = 0;
         internal const int ENVIRONMENT_PRODUCTION = 1;
 
+        internal const string KEY_PREF_FIRST_LAUNCH = "is_first_launch";
+        internal const string SHARED_PREFERENCE_FILE = "shortcut_deeplinking_shared_preferences";
+
         private static string AUTH_TOKEN_KEY = "sc.shortcut.sdk.deeplinking.authToken";
         private static string ENVIRONMENT_KEY = "sc.shortcut.sdk.deeplinking.environment";
         private static string LOG_LEVEL_KEY = "sc.shortcut.sdk.deeplinking.logLevel";
