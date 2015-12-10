@@ -11,12 +11,16 @@ namespace Shortcut.DeepLinking.Pcl
                 "1234567890123";
         }
 
-        public bool HasPermission()
+        public static bool HasPermission()
         {
             return true;
         }
 
-        public bool IsNetworkAvailable()
+        /// <summary>
+        /// Returns true if network is available.
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsNetworkAvailable()
         {
             bool isConnected = NetworkInterface.GetIsNetworkAvailable();
             if (!isConnected)

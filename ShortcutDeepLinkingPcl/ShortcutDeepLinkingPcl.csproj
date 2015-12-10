@@ -60,6 +60,7 @@
     <Compile Include="Interfaces\ISCShortLinkCreateListener.cs" />
     <Compile Include="SCShortLinkItem.cs" />
     <Compile Include="SCUtils.cs" />
+    <Compile Include="Utilities\HttpUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
