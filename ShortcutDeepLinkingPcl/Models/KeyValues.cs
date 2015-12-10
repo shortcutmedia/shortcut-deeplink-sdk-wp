@@ -40,9 +40,9 @@ namespace Shortcut.DeepLinking.Pcl
             "If you wish to use API level below 14 consider disabling automatic sanitizing and " +
              "call SCDeepLink.sanitize(String deepLink) manually.";
 
-        private static string AUTH_TOKEN_KEY = "sc.shortcut.sdk.deeplinking.authToken";
-        private static string ENVIRONMENT_KEY = "sc.shortcut.sdk.deeplinking.environment";
-        private static string LOG_LEVEL_KEY = "sc.shortcut.sdk.deeplinking.logLevel";
+        private static string SC_AUTH_TOKEN_KEY = "sc.shortcut.sdk.deeplinking.authToken";
+        private static string SC_ENVIRONMENT_KEY = "sc.shortcut.sdk.deeplinking.environment";
+        private static string SC_LOG_LEVEL_KEY = "sc.shortcut.sdk.deeplinking.logLevel";
 
         public static string LOG_TAG = "SCDeepLinking";
         public static int LOG_LEVEL_VERBOSE = 2;
