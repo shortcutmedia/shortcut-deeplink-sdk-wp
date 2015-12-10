@@ -18,7 +18,7 @@ namespace Shortcut.DeepLinking.Pcl
             {
                 return this.mJson;
             }
-            set
+            private set
             {
                 this.mJson = value;
             }
