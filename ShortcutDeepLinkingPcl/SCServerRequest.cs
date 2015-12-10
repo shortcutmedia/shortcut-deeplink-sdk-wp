@@ -10,12 +10,14 @@ namespace Shortcut.DeepLinking.Pcl
     {
         private string mRequestUri;
         private SCSession mSession;
+        private SCPreference mPreference;
         private Dictionary<string, string> mPostData;
 
-        public SCServerRequest(string RequestPath, SCSession Session)
+        public SCServerRequest(string requestPath, SCSession session)
         {
-            this.mRequestUri = RequestPath;
-            this.mSession = Session;
+            this.mRequestUri = requestPath;
+            this.mSession = session;
+            this.mPreference = SCDeepLinking.GetInstance().Preference;
         }
 
         protected Dictionary<string, string> PostData
@@ -29,7 +31,7 @@ namespace Shortcut.DeepLinking.Pcl
             get
             {
                 Dictionary<string, string> postData = new Dictionary<string, string>();
-                postData.Add(KeyValues.DEVICE_ID_KEY, new SCPreference().DeviceId);
+                postData.Add(KeyValues.DEVICE_ID_KEY, this.mPreference.DeviceId);
                 postData.Add(KeyValues.SESSION_ID_KEY, this.mSession.Id);
                 return postData;
             }

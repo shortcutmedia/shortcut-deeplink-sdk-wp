@@ -5,23 +5,33 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCServerResponse
     {
-        private JObject json;
+        private JObject mJson;
 
         public SCServerResponse(JObject Json)
         {
-            this.json = Json;
+            this.mJson = Json;
+        }
+
+        public JObject Json
+        {
+            get
+            {
+                return this.mJson;
+            }
+            set
+            {
+                this.mJson = value;
+            }
         }
 
         public string DeepLinkString
         {
-            get { return json[KeyValues.DEEP_LINK_KEY].ToString(); }
+            get { return mJson[KeyValues.DEEP_LINK_KEY].ToString(); }
         }
 
         public Uri DeepLink
         {
             get { return new Uri(this.DeepLinkString); }
         }
-
-        public JObject Json { get; set; }
     }
 }

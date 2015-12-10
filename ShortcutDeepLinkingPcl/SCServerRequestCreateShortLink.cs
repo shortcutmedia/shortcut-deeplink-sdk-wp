@@ -6,7 +6,7 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCServerRequestCreateShortLink : SCServerRequest
     {
-        private SCShortLinkCreateListener callback;
+        private SCShortLinkCreateListener mCallback;
 
         public SCServerRequestCreateShortLink(SCSession session, SCShortLinkItem item)
             : base(ActionUrls.GetActionUrl(ActionUrls.Create), session)
@@ -27,31 +27,31 @@ namespace Shortcut.DeepLinking.Pcl
         public SCServerRequestCreateShortLink(SCSession session, SCShortLinkItem item, SCShortLinkCreateListener callback)
             : this(session, item)
         {
-            this.callback = callback;
+            this.mCallback = callback;
         }
 
         public SCShortLinkCreateListener Callback
         {
             get
             {
-                return this.callback;
+                return this.mCallback;
             }
             set
             {
-                this.callback = value;
+                this.mCallback = value;
             }
         }
 
         public void OnRequestSucceeded(SCServerResponse response)
         {
-            if (this.callback != null)
+            if (this.mCallback != null)
             {
                 JObject json = response.Json;
                 string Url = json[KeyValues.SHORT_URL_RESPONSE_KEY].ToString();
                 if (!String.IsNullOrWhiteSpace(Url))
                 {
                     Uri shortLink = new Uri(Url);
-                    this.callback.OnLinkCreated(shortLink.ToString());
+                    this.mCallback.OnLinkCreated(shortLink.ToString());
                 }
             }
         }

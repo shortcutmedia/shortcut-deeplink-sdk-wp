@@ -5,33 +5,33 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCShortLinkItem
     {
-        private string webDeepLink;
-        private string androidDeepLink;
-        private string googlePlayStore;
-        private string iosDeepLink;
-        private string appleAppStore;
-        private string windowsDeepLink;
-        private string windowsStore;
+        private string mWebDeepLink;
+        private string mAndroidDeepLink;
+        private string mGooglePlayStore;
+        private string mIosDeepLink;
+        private string mAppleAppStore;
+        private string mWindowsDeepLink;
+        private string mWindowsStore;
 
         public SCShortLinkItem(string webDeepLink,
             string androidDeepLink = null, string googlePlayStore = null,
             string iosDeepLink = null, string appleAppStore = null,
             string windowsDeepLink = null, string windowsStore = null)
         {
-            this.webDeepLink = webDeepLink;
-            this.androidDeepLink = androidDeepLink;
-            this.googlePlayStore = googlePlayStore;
-            this.iosDeepLink = iosDeepLink;
-            this.appleAppStore = appleAppStore;
-            this.windowsDeepLink = windowsDeepLink;
-            this.windowsStore = windowsStore;
+            this.mWebDeepLink = webDeepLink;
+            this.mAndroidDeepLink = androidDeepLink;
+            this.mGooglePlayStore = googlePlayStore;
+            this.mIosDeepLink = iosDeepLink;
+            this.mAppleAppStore = appleAppStore;
+            this.mWindowsDeepLink = windowsDeepLink;
+            this.mWindowsStore = windowsStore;
         }
 
         public string WindowsStore
         {
             get
             {
-                return this.windowsStore;
+                return this.mWindowsStore;
             }
         }
 
@@ -39,7 +39,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             get
             {
-                return this.windowsDeepLink;
+                return this.mWindowsDeepLink;
             }
         }
 
@@ -47,7 +47,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             get
             {
-                return this.appleAppStore;
+                return this.mAppleAppStore;
             }
         }
 
@@ -55,7 +55,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             get
             {
-                return this.googlePlayStore;
+                return this.mGooglePlayStore;
             }
         }
 
@@ -63,7 +63,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             get
             {
-                return this.iosDeepLink;
+                return this.mIosDeepLink;
             }
         }
 
@@ -71,7 +71,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             get
             {
-                return this.androidDeepLink;
+                return this.mAndroidDeepLink;
             }
         }
 
@@ -79,7 +79,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             get
             {
-                return this.webDeepLink;
+                return this.mWebDeepLink;
             }
         }
 
@@ -89,14 +89,14 @@ namespace Shortcut.DeepLinking.Pcl
             JObject jsonDeepLinkData = new JObject();
             try
             {
-                jsonDeepLinkData.Add(KeyValues.ANDROID_DEEP_LINK_KEY, this.androidDeepLink);
-                jsonDeepLinkData.Add(KeyValues.ANDROID_PLAY_STORE_KEY, this.googlePlayStore);
-                jsonDeepLinkData.Add(KeyValues.IOS_DEEP_LINK_KEY, this.iosDeepLink);
-                jsonDeepLinkData.Add(KeyValues.IOS_APP_STORE_KEY, this.appleAppStore);
-                jsonDeepLinkData.Add(KeyValues.WINDOWS_DEEP_LINK_KEY, this.windowsDeepLink);
-                jsonDeepLinkData.Add(KeyValues.WINDOWS_STORE_KEY, this.windowsStore);
+                jsonDeepLinkData.Add(KeyValues.ANDROID_DEEP_LINK_KEY, this.mAndroidDeepLink);
+                jsonDeepLinkData.Add(KeyValues.ANDROID_PLAY_STORE_KEY, this.mGooglePlayStore);
+                jsonDeepLinkData.Add(KeyValues.IOS_DEEP_LINK_KEY, this.mIosDeepLink);
+                jsonDeepLinkData.Add(KeyValues.IOS_APP_STORE_KEY, this.mAppleAppStore);
+                jsonDeepLinkData.Add(KeyValues.WINDOWS_DEEP_LINK_KEY, this.mWindowsDeepLink);
+                jsonDeepLinkData.Add(KeyValues.WINDOWS_STORE_KEY, this.mWindowsStore);
 
-                json.Add(KeyValues.URI_KEY, this.webDeepLink);
+                json.Add(KeyValues.URI_KEY, this.mWebDeepLink);
                 json.Add(KeyValues.MOBILE_DEEP_LINK_KEY, jsonDeepLinkData);
             }
             catch (Exception e)

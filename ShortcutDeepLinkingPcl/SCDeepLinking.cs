@@ -23,18 +23,11 @@ namespace Shortcut.DeepLinking.Pcl
         private Dictionary<string, SCSession> mSessions;
         private bool mDeviceRotated;
 
-        public SCDeepLinking(SCConfig config)
-        {
-            this.mConfig = config;
-            this.mPreference = new SCPreference();
-            this.mSessions = new Dictionary<string, object>();
-        }
-
         public SCDeepLinking(SCConfig config, object context)
         {
             this.mConfig = config;
             this.mContext = context;
-            this.mPreference = new SCPreference();
+            this.mPreference = new SCPreference(context);
             this.mSessions = new Dictionary<string, SCSession>();
 
             //if (context == typeof(SCDeepLinkingApp))
@@ -79,23 +72,14 @@ namespace Shortcut.DeepLinking.Pcl
             }
         }
 
-        public static SCDeepLinking GetInstance(SCConfig config)
+        public static SCDeepLinking GetInstance(SCConfig config, object context)
         {
             if (mDeepLinking == null)
             {
-                mDeepLinking = new SCDeepLinking(config);
+                mDeepLinking = new SCDeepLinking(config, context);
             }
             return mDeepLinking;
         }
-
-        //public static SCDeepLinking GetInstance(SCConfig config, Context context)
-        //{
-        //    if (scDeepLinking == null)
-        //    {
-        //        scDeepLinking = new SCDeepLinking(config, context);
-        //    }
-        //    return scDeepLinking;
-        //}
 
         public static SCDeepLinking GetInstance()
         {

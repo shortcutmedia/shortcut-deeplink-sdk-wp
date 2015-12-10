@@ -8,6 +8,10 @@ namespace Shortcut.DeepLinking.Pcl
         private object mSharedPreferences;
         private object mEditor;
 
+        public SCPreference()
+        {
+        }
+
         public SCPreference(object context)
         {
             mContext = context;

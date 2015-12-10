@@ -6,13 +6,13 @@ namespace Shortcut.DeepLinking.Pcl
     {
         //private Context context;
 
-        private string webDeepLink;
-        private string androidDeepLink;
-        private string googlePlayStore;
-        private string iosDeepLink;
-        private string appleAppStore;
-        private string windowsDeepLink;
-        private string windowsStore;
+        private string mWebDeepLink;
+        private string mAndroidDeepLink;
+        private string mGooglePlayStore;
+        private string mIosDeepLink;
+        private string mAppleAppStore;
+        private string mWindowsDeepLink;
+        private string mWindowsStore;
 
         public SCShortLinkBuilder()
         {
@@ -28,7 +28,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             set
             {
-                this.windowsStore = value;
+                this.mWindowsStore = value;
             }
         }
 
@@ -36,7 +36,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             set
             {
-                this.windowsDeepLink = value;
+                this.mWindowsDeepLink = value;
             }
         }
 
@@ -44,7 +44,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             set
             {
-                this.appleAppStore = value;
+                this.mAppleAppStore = value;
             }
         }
 
@@ -52,7 +52,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             set
             {
-                this.iosDeepLink = value;
+                this.mIosDeepLink = value;
             }
         }
 
@@ -60,7 +60,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             set
             {
-                this.googlePlayStore = value;
+                this.mGooglePlayStore = value;
             }
         }
 
@@ -68,7 +68,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             set
             {
-                this.androidDeepLink = value;
+                this.mAndroidDeepLink = value;
             }
         }
 
@@ -76,7 +76,7 @@ namespace Shortcut.DeepLinking.Pcl
         {
             set
             {
-                this.webDeepLink = value;
+                this.mWebDeepLink = value;
             }
         }
 
@@ -84,10 +84,10 @@ namespace Shortcut.DeepLinking.Pcl
         {
             get
             {
-                return new SCShortLinkItem(this.webDeepLink,
-                    this.androidDeepLink, this.googlePlayStore,
-                    this.iosDeepLink, this.appleAppStore,
-                    this.windowsDeepLink, this.windowsStore);
+                return new SCShortLinkItem(this.mWebDeepLink,
+                    this.mAndroidDeepLink, this.mGooglePlayStore,
+                    this.mIosDeepLink, this.mAppleAppStore,
+                    this.mWindowsDeepLink, this.mWindowsStore);
             }
         }
 

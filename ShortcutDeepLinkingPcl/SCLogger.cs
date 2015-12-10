@@ -5,23 +5,23 @@ namespace Shortcut.DeepLinking.Pcl
     public class SCLogger
     {
         public static string LOG_TAG = KeyValues.LOG_TAG;
-        private int logLevel = KeyValues.LOG_LEVEL_INFO;
+        private int mLogLevel = KeyValues.LOG_LEVEL_INFO;
 
         public int LogLevel
         {
             get
             {
-                return this.logLevel;
+                return this.mLogLevel;
             }
             set
             {
-                this.logLevel = value;
+                this.mLogLevel = value;
             }
         }
 
         public void Debug(string Message)
         {
-            if (this.logLevel <= KeyValues.LOG_LEVEL_DEBUG)
+            if (this.mLogLevel <= KeyValues.LOG_LEVEL_DEBUG)
             {
                 
             }
@@ -29,7 +29,7 @@ namespace Shortcut.DeepLinking.Pcl
 
         public void Warning(String Message)
         {
-            if (this.logLevel <= KeyValues.LOG_LEVEL_WARN)
+            if (this.mLogLevel <= KeyValues.LOG_LEVEL_WARN)
             {
 
             }
