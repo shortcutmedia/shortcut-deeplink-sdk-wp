@@ -34,6 +34,11 @@ namespace Shortcut.DeepLinking.Pcl
         internal const string KEY_PREF_FIRST_LAUNCH = "is_first_launch";
         internal const string SHARED_PREFERENCE_FILE = "shortcut_deeplinking_shared_preferences";
 
+        internal const string SANITIZE_NOT_AVAILABLE_MESSAGE =
+            "Automatic sanitizing of deep links is only available with API level 14 or above. " +
+            "If you wish to use API level below 14 consider disabling automatic sanitizing and " +
+             "call SCDeepLink.sanitize(String deepLink) manually.";
+
         private static string AUTH_TOKEN_KEY = "sc.shortcut.sdk.deeplinking.authToken";
         private static string ENVIRONMENT_KEY = "sc.shortcut.sdk.deeplinking.environment";
         private static string LOG_LEVEL_KEY = "sc.shortcut.sdk.deeplinking.logLevel";
