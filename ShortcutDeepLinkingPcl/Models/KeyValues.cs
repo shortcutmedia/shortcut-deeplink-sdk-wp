@@ -12,6 +12,7 @@ namespace Shortcut.DeepLinking.Pcl
         internal const string PLATFORM_BUILD_KEY = "platform_build";
         internal const string MODEL_KEY = "model";
 
+        internal const string AUTH_TOKEN_KEY = "token";
         internal const string DEVICE_ID_KEY = "sc_device_id";
         internal const string SESSION_ID_KEY = "sc_session_id";
         internal const string LINK_ID_KEY = "sc_link_id";
@@ -49,5 +50,9 @@ namespace Shortcut.DeepLinking.Pcl
         public static int LOG_LEVEL_INFO = 4;
         public static int LOG_LEVEL_WARN = 5;
         public static int LOG_LEVEL_ERROR = 6;
+
+        internal const int STATUS_SUCCESS = 0;
+        internal const int STATUS_CONNECTION_ERROR = 1;
+        internal const int STATUS_REQUEST_ERROR = 2;
     }
 }

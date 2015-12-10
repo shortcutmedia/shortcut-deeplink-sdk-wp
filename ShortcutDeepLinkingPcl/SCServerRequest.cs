@@ -8,9 +8,11 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCServerRequest
     {
+        private int mStatus;
         private string mRequestUri;
         private SCSession mSession;
         private SCPreference mPreference;
+        private SCConfig mConfig;
         private Dictionary<string, string> mPostData;
 
         public SCServerRequest(string requestPath, SCSession session)
@@ -18,6 +20,34 @@ namespace Shortcut.DeepLinking.Pcl
             this.mRequestUri = requestPath;
             this.mSession = session;
             this.mPreference = SCDeepLinking.GetInstance().Preference;
+        }
+
+        public SCConfig Config
+        {
+            get
+            {
+                if (mConfig == null)
+                {
+                    mConfig = SCDeepLinking.GetInstance().Config;
+                }()
+                return this.mConfig;
+            }
+            private set
+            {
+                this.mConfig = value;
+            }
+        }
+
+        public int Status
+        {
+            get
+            {
+                return this.mStatus;
+            }
+            private set
+            {
+                this.mStatus = value;
+            }
         }
 
         protected Dictionary<string, string> PostData
@@ -33,6 +63,7 @@ namespace Shortcut.DeepLinking.Pcl
                 Dictionary<string, string> postData = new Dictionary<string, string>();
                 postData.Add(KeyValues.DEVICE_ID_KEY, this.mPreference.DeviceId);
                 postData.Add(KeyValues.SESSION_ID_KEY, this.mSession.Id);
+                postData.Add(KeyValues.AUTH_TOKEN_KEY, this.Config.AuthToken);
                 return postData;
             }
         }
@@ -55,12 +86,18 @@ namespace Shortcut.DeepLinking.Pcl
                         result = scResponse.DeepLinkString;
                     }
                 }
+                mStatus = KeyValues.STATUS_SUCCESS;
             }
             catch (Exception ex)
             {
+                mStatus = KeyValues.STATUS_CONNECTION_ERROR;
                 return ex.StackTrace;
             }
             return result;
+        }
+
+        public virtual void OnRequestSucceeded(SCServerResponse response)
+        {
         }
 
         private Dictionary<string, string> BuildPostData()
