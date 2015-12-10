@@ -57,7 +57,7 @@
     <Compile Include="SCServerResponse.cs" />
     <Compile Include="SCSession.cs" />
     <Compile Include="SCShortLinkBuilder.cs" />
-    <Compile Include="SCShortLinkCreateListener.cs" />
+    <Compile Include="Interfaces\ISCShortLinkCreateListener.cs" />
     <Compile Include="SCShortLinkItem.cs" />
     <Compile Include="SCUtils.cs" />
   </ItemGroup>

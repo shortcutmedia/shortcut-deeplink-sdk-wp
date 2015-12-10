@@ -4,7 +4,7 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCShortLinkBuilder
     {
-        //private Context context;
+        private object mContext;
 
         private string mWebDeepLink;
         private string mAndroidDeepLink;
@@ -19,10 +19,10 @@ namespace Shortcut.DeepLinking.Pcl
 
         }
 
-        //public SCShortLinkBuilder(Context context)
-        //{
-        //    this.context = context;
-        //}
+        public SCShortLinkBuilder(object context)
+        {
+            this.mContext = context;
+        }
 
         public string WindowsStore
         {
@@ -91,7 +91,7 @@ namespace Shortcut.DeepLinking.Pcl
             }
         }
 
-        public void CreateShortLink(SCShortLinkCreateListener callback)
+        public void CreateShortLink(ISCShortLinkCreateListener callback)
         {
             SCDeepLinking scDeepLinking = SCDeepLinking.GetInstance();
             scDeepLinking.CreateShortLink(Item, callback);

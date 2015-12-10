@@ -189,7 +189,7 @@ namespace Shortcut.DeepLinking.Pcl
             throw new NotImplementedException();
         }
 
-        internal void CreateShortLink(SCShortLinkItem item, SCShortLinkCreateListener callback)
+        internal void CreateShortLink(SCShortLinkItem item, ISCShortLinkCreateListener callback)
         {
             throw new NotImplementedException();
             //PostTask postTask = new PostTask();

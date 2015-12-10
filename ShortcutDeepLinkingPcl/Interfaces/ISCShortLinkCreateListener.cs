@@ -2,7 +2,7 @@
 
 namespace Shortcut.DeepLinking.Pcl
 {
-    public interface SCShortLinkCreateListener
+    public interface ISCShortLinkCreateListener
     {
         void OnLinkCreated(string shortLink);
     }

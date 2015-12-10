@@ -6,7 +6,7 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCServerRequestCreateShortLink : SCServerRequest
     {
-        private SCShortLinkCreateListener mCallback;
+        private ISCShortLinkCreateListener mCallback;
 
         public SCServerRequestCreateShortLink(SCSession session, SCShortLinkItem item)
             : base(ActionUrls.GetActionUrl(ActionUrls.Create), session)
@@ -24,13 +24,13 @@ namespace Shortcut.DeepLinking.Pcl
             base.PostData = postData;
         }
 
-        public SCServerRequestCreateShortLink(SCSession session, SCShortLinkItem item, SCShortLinkCreateListener callback)
+        public SCServerRequestCreateShortLink(SCSession session, SCShortLinkItem item, ISCShortLinkCreateListener callback)
             : this(session, item)
         {
             this.mCallback = callback;
         }
 
-        public SCShortLinkCreateListener Callback
+        public ISCShortLinkCreateListener Callback
         {
             get
             {
