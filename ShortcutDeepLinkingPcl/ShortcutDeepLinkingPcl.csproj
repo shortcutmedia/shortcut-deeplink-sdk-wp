@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="Extensions\ClientExtensions.cs" />
     <Compile Include="Extensions\UriExtensions.cs" />
+    <Compile Include="Interfaces\ISCServerRequest.cs" />
     <Compile Include="Models\ActionUrls.cs" />
     <Compile Include="Models\KeyValues.cs" />
     <Compile Include="SCConfig.cs" />

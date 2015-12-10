@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Shortcut.DeepLinking.Pcl
 {
-    public class SCServerRequestRegisterClose : SCServerRequest
+    public class SCServerRequestRegisterClose : SCServerRequest, ISCServerRequest
     {
         public SCServerRequestRegisterClose(SCSession session)
             : base(ActionUrls.GetActionUrl(ActionUrls.Close), session)

@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Shortcut.DeepLinking.Pcl
 {
-    public class SCServerRequestCreateShortLink : SCServerRequest
+    public class SCServerRequestCreateShortLink : SCServerRequest, ISCServerRequest
     {
         private ISCShortLinkCreateListener mCallback;
 

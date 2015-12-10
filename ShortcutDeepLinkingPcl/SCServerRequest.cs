@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Shortcut.DeepLinking.Pcl
 {
-    public class SCServerRequest
+    public class SCServerRequest : ISCServerRequest
     {
         private int mStatus;
         private string mRequestUri;
