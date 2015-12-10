@@ -29,7 +29,7 @@ namespace Shortcut.DeepLinking.Pcl
                 if (mConfig == null)
                 {
                     mConfig = SCDeepLinking.GetInstance().Config;
-                }()
+                }
                 return this.mConfig;
             }
             private set
