@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Shortcut.DeepLinking.Pcl
 {
@@ -16,14 +18,14 @@ namespace Shortcut.DeepLinking.Pcl
             return map;
         }
 
-        public string toJson()
+        public JObject toJson()
         {
-            return "";
+            return new JObject(toMap());
         }
 
         public string toString()
         {
-            return "";
+            return JsonConvert.SerializeObject(toMap());
         }
 
         private string Version
