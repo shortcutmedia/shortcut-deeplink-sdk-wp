@@ -7,9 +7,9 @@ namespace Shortcut.DeepLinking.Pcl
     {
         private JObject mJson;
 
-        public SCServerResponse(JObject Json)
+        public SCServerResponse(JObject json)
         {
-            this.mJson = Json;
+            this.mJson = json;
         }
 
         public JObject Json

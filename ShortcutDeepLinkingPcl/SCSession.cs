@@ -16,9 +16,9 @@ namespace Shortcut.DeepLinking.Pcl
             this.mId = new Random(int.MaxValue - 1).Next().ToString();
         }
 
-        public SCSession(Uri DeepLink)
+        public SCSession(Uri deepLink)
         {
-            this.mDeepLink = DeepLink;
+            this.mDeepLink = deepLink;
             this.mId = new Random(int.MaxValue - 1).Next().ToString();
         }
 

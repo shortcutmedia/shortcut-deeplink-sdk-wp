@@ -11,9 +11,9 @@ namespace Shortcut.DeepLinking.Pcl
         private int mEnvironment = KeyValues.ENVIRONMENT_PRODUCTION;
         private int mLogLevel = KeyValues.LOG_LEVEL_INFO;
 
-        public SCConfig(String AuthToken)
+        public SCConfig(String authToken)
         {
-            this.mAuthToken = AuthToken;
+            this.mAuthToken = authToken;
 
             if (this.mEnvironment == KeyValues.ENVIRONMENT_SANDBOX)
             {

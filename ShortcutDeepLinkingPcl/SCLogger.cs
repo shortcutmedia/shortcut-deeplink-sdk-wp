@@ -19,7 +19,7 @@ namespace Shortcut.DeepLinking.Pcl
             }
         }
 
-        public void Debug(string Message)
+        public void Debug(string message)
         {
             if (this.mLogLevel <= KeyValues.LOG_LEVEL_DEBUG)
             {
@@ -27,7 +27,7 @@ namespace Shortcut.DeepLinking.Pcl
             }
         }
 
-        public void Warning(String Message)
+        public void Warning(String message)
         {
             if (this.mLogLevel <= KeyValues.LOG_LEVEL_WARN)
             {
@@ -35,31 +35,31 @@ namespace Shortcut.DeepLinking.Pcl
             }
         }
 
-        public static int FromString(String LogLevel)
+        public static int FromString(String logLevel)
         {
-            int logLevel = -1;
-            if (!String.IsNullOrWhiteSpace(LogLevel))
+            int mLogLevel = -1;
+            if (!String.IsNullOrWhiteSpace(logLevel))
             {
-                switch(LogLevel.ToLowerInvariant())
+                switch(logLevel.ToLowerInvariant())
                 {
                     case "verbose":
-                        logLevel = KeyValues.LOG_LEVEL_VERBOSE;
+                        mLogLevel = KeyValues.LOG_LEVEL_VERBOSE;
                         break;
                     case "debug":
-                        logLevel = KeyValues.LOG_LEVEL_DEBUG;
+                        mLogLevel = KeyValues.LOG_LEVEL_DEBUG;
                         break;
                     case "info":
-                        logLevel = KeyValues.LOG_LEVEL_INFO;
+                        mLogLevel = KeyValues.LOG_LEVEL_INFO;
                         break;
                     case "warn":
-                        logLevel = KeyValues.LOG_LEVEL_WARN;
+                        mLogLevel = KeyValues.LOG_LEVEL_WARN;
                         break;
                     case "error":
-                        logLevel = KeyValues.LOG_LEVEL_ERROR;
+                        mLogLevel = KeyValues.LOG_LEVEL_ERROR;
                         break;
                 }
             }
-            return logLevel;
+            return mLogLevel;
         }
     }
 }

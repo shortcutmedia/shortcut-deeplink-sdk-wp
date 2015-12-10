@@ -5,11 +5,11 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCServerRequestRegisterOpen : SCServerRequest
     {
-        public SCServerRequestRegisterOpen(SCSession Session)
-            : base(ActionUrls.GetActionUrl(ActionUrls.Open), Session)
+        public SCServerRequestRegisterOpen(SCSession session)
+            : base(ActionUrls.GetActionUrl(ActionUrls.Open), session)
         {
             Dictionary<string, string> postData = new Dictionary<string,string>();
-            postData.Add(KeyValues.LINK_ID_KEY, Session.LinkId);
+            postData.Add(KeyValues.LINK_ID_KEY, session.LinkId);
             base.PostData = postData;
         }
 

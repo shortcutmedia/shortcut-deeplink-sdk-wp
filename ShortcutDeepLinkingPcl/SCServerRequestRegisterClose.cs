@@ -5,11 +5,11 @@ namespace Shortcut.DeepLinking.Pcl
 {
     public class SCServerRequestRegisterClose : SCServerRequest
     {
-        public SCServerRequestRegisterClose(SCSession Session)
-            : base(ActionUrls.GetActionUrl(ActionUrls.Close), Session)
+        public SCServerRequestRegisterClose(SCSession session)
+            : base(ActionUrls.GetActionUrl(ActionUrls.Close), session)
         {
             Dictionary<string, string> postData = new Dictionary<string, string>();
-            postData.Add(KeyValues.LINK_ID_KEY, Session.LinkId);
+            postData.Add(KeyValues.LINK_ID_KEY, session.LinkId);
             base.PostData = postData;
         }
 
